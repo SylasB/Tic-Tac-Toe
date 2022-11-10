@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 1vh;
+  font-size: xx-large;
+  font-family: fantasy;
+}
