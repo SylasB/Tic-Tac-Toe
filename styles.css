@@ -3,12 +3,182 @@
 *::after {
   margin: 0;
   padding: 0;
+  color: #0ff;
+  background-color: black;
+  font-family: fantasy;
+}
+
+.player1 {
+  color: #0ff;
+  text-shadow: 0 0 3vw #0ff;
+}
+
+.player2 {
+  color: #ff0000;
+  text-shadow: 0 0 3vw #ff0000;
+}
+
+body {
 }
 
 header {
   display: flex;
   justify-content: center;
-  padding: 1vh;
-  font-size: xx-large;
+  font-size: x-large;
   font-family: fantasy;
+}
+
+.game {
+  text-align: center;
+}
+
+#inputForm {
+  position: absolute;
+  top: 20%;
+  left: 37%;
+  display: grid;
+  margin: 1vw;
+  padding: 0.5vw;
+  border: #0ff solid 2px;
+  border-radius: 1vw;
+}
+
+.input-label {
+  text-decoration: underline;
+}
+
+.formClass {
+  border: 2px solid #0ff;
+}
+
+.selectors {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  display: flex;
+  justify-content: center;
+  margin: 1vw;
+  padding: 0.5vw;
+  border: #0ff solid 2px;
+  border-radius: 1vw;
+}
+
+#selectorsSubmit {
+  min-width: 5vw;
+  height: fit-content;
+  margin-top: 7vh;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  border: #0ff solid 2px;
+}
+
+.difficultySelector {
+  margin: 1vw;
+  padding: 0.3vw;
+}
+
+.difficultySelector label {
+  font-size: large;
+  text-decoration: underline;
+}
+
+#difficultySelector {
+  margin: 1vw;
+  font-size: large;
+}
+
+.tokenSelector {
+  margin: 1vw;
+  font-size: medium;
+  font-weight: 300;
+  padding: 0.3vw;
+}
+
+.tokenSelector p {
+  font-size: large;
+  text-decoration: underline;
+  padding-bottom: 0.5vw;
+}
+
+.tokenSelector button {
+  margin-left: 0.5vw;
+  font-size: medium;
+  font-weight: 600;
+  width: 3vw;
+  height: 3vw;
+}
+
+.gameBoard {
+  padding: 5vh;
+  padding-left: 33.5vw;
+
+  display: grid;
+  grid-template-columns: 10vw 10vw 10vw;
+  grid-template-rows: 10vw 10vw 10vw;
+
+  border-radius: 0.5vw;
+  grid-gap: 1vw;
+}
+
+.red {
+  background-color: red;
+}
+
+button {
+  border-radius: 0.5vw;
+}
+
+.hidden {
+  display: none;
+}
+
+.gameBoard button {
+  background-color: transparent;
+  border-color: black;
+  border-radius: 1vw;
+  box-shadow: 0px 0px 30px 15px #0ff;
+}
+
+.gameBoard button:hover {
+  scale: 110%;
+}
+
+.gameBoard button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 0px 0px 0px;
+  border: 1px solid #0ff;
+}
+
+.tile {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 15vh;
+}
+
+.resetBoard {
+}
+
+.resetBoard button {
+  min-height: 1.3cm;
+  min-width: 4cm;
+  margin: 1vw;
+  border: solid 1px black;
+  box-shadow: 0px 0px 5px 5px #0ff;
+}
+
+.resetBoard button:hover {
+  scale: 110%;
+}
+
+.resetBoard button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 0px 0px 0px;
+  border: 1px solid #0ff;
+}
+
+.contact {
+  margin: 5vh;
+  text-align: center;
 }

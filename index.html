@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
@@ -14,29 +15,92 @@
     </header> 
     <main>
         <div class="game">
-            <div class="difficultySelector">
-                <label for="Difficulty"> Difficulty Selector</label>
-                <form action="" class="form">
-                    <select name="Difficulty" id="difficultySelector">
-                        <option value="easy">Easy</option>
-                        <option value="medium">Medium</option>
-                        <option value="impossible">Impossible</option>
-                    </select>
+           <!--  <div class="selectors">
+                <div class="difficultySelector">
+                    <label for="Difficulty"> Difficulty Selector</label>
+                    <form action="" class="form">
+                        <select name="Difficulty" id="difficultySelector">
+                            <option value="easy">Easy</option>
+                            <option value="impossible">Impossible</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="tokenSelector">
+                    <p>Choose Your Token</p>
+                    <button>X</button>
+                    <button>O</button>
+                </div>
+                <div id="selectorsSubmit">
+                    Play
+                </div>
+            </div>     --> 
+            <div class="formWrapper">
+                <form id="inputForm" autocomplete="off">
+                    <div class="inputField">
+                        <label class="input-label">Player 1:</label>
+                        <input type="text" name="player1Name" class="formClass" id="form1" required>
+                    </div>
+                    <div class="inputField">
+                        <label class="input-label">Player 2:</label>
+                        <input type="text" name="player2Name" class="formClass" id="form2" required>
+                    </div>
+                    <div class="inputField">
+                        <label for="1v1" class="title container">Human vs Human:</label>
+                        <input type="radio" id="1v1" name="choice" value="0" required>
+                    </div>
+                    <div class="inputField">
+                        <label for="ai" class="title">Human vs Easy AI:</label>
+                        <input type="radio" id="ai" name="choice" value="1" required>
+                    </div>
+                    <div class="inputField">
+                        <label for="aiHard" class="title">Human vs Impossible AI:</label>
+                        <input type="radio" id="aiHard" name="choice" value="2" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="selectorsSubmit">Start Game</button>
+                    </div>
                 </form>
             </div>
-            <div class="tokenSelector">
-                <button></button>
-            </div>
-            <div class="gameBoard">
-
+            <div class="gameBoard" id="gameBoard">
+                <button class="tile">
+                    
+                </button>
+                <button class="tile">
+                    
+                </button>
+                <button class="tile">
+                    
+                </button>
+                <button class="tile">
+                   
+                </button>
+                <button class="tile ">
+                    
+                </button>
+                <button class="tile">
+                  
+                </button>
+                <button class="tile">
+                  
+                </button>
+                <button class="tile">
+                   
+                </button>
+                <button class="tile">
+                  
+                </button>
             </div>
             <div class="resetBoard">
-                <button>RESET BOARD</button>
+                <button>New Game</button> 
             </div>
         </div>
     </main>
     <footer>
-
+        <div class="contact">
+            <p>
+                Copyright 2022 <a href="https://github.com/SylasB" target="blank">Sylas Boniek</a>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
