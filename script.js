@@ -134,8 +134,8 @@ const changePlayer = (data) => {
 
 const easyAIMove = (data) => {
    // changePlayer(data);
-
-    setTimeout(() => { 
+    data.round++;
+   setTimeout(() => { 
         changePlayer(data);
     let availableSpaces = data.board.filter(
     (space) => space !== "X" && space !== "O"
@@ -148,12 +148,20 @@ const easyAIMove = (data) => {
     tile.textContent = data.player2;
     tile.className = "tile player2";
 
-    }, 200);
-
-   
+    /* if (endConditions(data)) {
+        return;
+    }; */
      if (endConditions(data)) {
         return;
     };
 
+    if (data.round === 9) {
+        adjustDom("displayTurn", "It's a Tie!");
+        data.gameOver = true;
+        return true;
+    };
+
  changePlayer(data);
+
+}, 200);
 };
