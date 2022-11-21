@@ -39,7 +39,7 @@ const startGame = (data) => {
     console.log(data);
     //eventListeners
     addEventListenersToBoard(data);
-    
+
     let displayTurnText = data.currentPlayer === "X" ? data.player1Name : data.player2Name; 
     adjustDom("displayTurn", `${displayTurnText}'s turn`);
 };
@@ -71,14 +71,27 @@ const playMove = (tile, data) => {
         return;
     }
 
-    changePlayer(data);
+    if(data.choice === 0) {
+        changePlayer(data);
+    } 
+    else if(data.choice === 1) {
+        //Easy (Random) AI
+
+        easyAIMove(data);
+        data.currentPlayer == "X";
+    }
+    else if(data.choice === 2) {
+        //Hard AI
+    }
+
+   
 };
 
 const endConditions = (data) => {
 //player wins
     if(checkWinner(data)) {
         let winnerName = data.currentPlayer === "X" ? data.player1Name : data.player2Name;
-        adjustDom("displayTurn", winnerName + " has won the game!");
+        adjustDom("displayTurn", winnerName + " has won the game!!!");
         data.gameOver = true;
         return true;
     }
@@ -117,4 +130,30 @@ const changePlayer = (data) => {
 
     let displayTurnText = data.currentPlayer === "X" ? data.player1Name : data.player2Name; 
     adjustDom("displayTurn", `${displayTurnText}'s turn`);
+};
+
+const easyAIMove = (data) => {
+   // changePlayer(data);
+
+    setTimeout(() => { 
+        changePlayer(data);
+    let availableSpaces = data.board.filter(
+    (space) => space !== "X" && space !== "O"
+    );
+
+    let move = 
+        availableSpaces[Math.floor(Math.random() * availableSpaces.length)];
+    data.board[move] = data.player2;
+    let tile = document.getElementById(`${move}`);
+    tile.textContent = data.player2;
+    tile.className = "tile player2";
+
+    }, 200);
+
+   
+     if (endConditions(data)) {
+        return;
+    };
+
+ changePlayer(data);
 };
