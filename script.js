@@ -98,8 +98,12 @@ const playMove = (tile, data) => {
         //Hard AI
         hardAIMove(data);
         
+        if(endConditions(data)) {
+            return;
+        }
         changePlayer(data);
     }
+  
 };
 
 const endConditions = (data) => {
@@ -107,7 +111,6 @@ const endConditions = (data) => {
     if(checkWinner(data, data.currentPlayer)) {
         let winnerName = data.currentPlayer === "X" ? data.player1Name : data.player2Name;
         adjustDom("displayTurn", winnerName + " has won the game!!!");
-        //data.gameOver = true;
         return true;
     }
 //tie
@@ -187,9 +190,17 @@ const hardAIMove = (data) => {
     tile.textContent = data.player2;
     tile.className = "tile player2";
 
+    /*
     if(endConditions(data)) {
         return;
     }
+    if(checkWinner(data, data.currentPlayer)) {
+        let winnerName = data.currentPlayer === "X" ? data.player1Name : data.player2Name;
+        adjustDom("displayTurn", winnerName + " has won the game!!!");
+        return true;
+    } 
+    */
+
     console.log(move);
     console.log(data);
 };
